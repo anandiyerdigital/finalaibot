@@ -64,19 +64,24 @@ export default function Home() {
           I am a highly intelligent question answering bot built by Alltech Creative Team. If you ask me a question that is rooted in truth, I will give you the answer. If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with "Unknown".
           </p>
 
-          <form onSubmit={onSubmit} method="post">
-          <input
-          class="input w-full max-w-xs"
+          <form onSubmit={onSubmit} method="post" className='form-control'>
+          <textarea
+          class="textarea textarea-success"
             type="text"
             name="animal"
             placeholder="Please enter a question here"
             value={animalInput}
             onChange={(e) => setAnimalInput(e.target.value)}
           />
-          <button className="btn btn-primary" type="submit" value="Give me the answer">Submit</button>
+          <button className="btn p-2 m-2 bg-gray-800" type="submit" value="Give me the answer">Submit</button>
         </form>
+        <div className="indicator p-2 m-2">
+          <span className="indicator-item badge badge-primary">results</span> 
+          <div className="grid w-80 h-32 bg-base-300 place-items-center m-2">{result}</div>
+        </div>
 
-        <div>{result}</div>
+
+        
 
         </div>
 
