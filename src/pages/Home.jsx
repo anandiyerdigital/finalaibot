@@ -22,9 +22,10 @@ export default function Home() {
 
 
     const configuration = new Configuration({
-      apiKey:'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',
+      apiKey: process.env.REACT_APP_OPENAPI_KEY,
     });
 
+    console.log(process.env.REACT_APP_OPENAPI_KEY)
     const openai = new OpenAIApi(configuration)
     
     openai.createCompletion({
